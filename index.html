@@ -10,9 +10,28 @@
     <title>budget daily</title>
 </head>
 <body>
-  <section class="container text-center"> <h2>Budget DailyLife</h2>
-    <div class="col-md-12"><img src="images/money.jpg" alt=""></div>
-    <div class="col-md-12"></div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, necessitatibus. Inventore ut optio tempora magni veritatis consequatur dolorum error tempore voluptatibus! Reiciendis harum ut officiis vitae vel, quisquam officia sequi?</p></section>
+  <section class="container text-center"> <div class="">
+    <h2 class="my-5 text-info fw-bold">Budget DailyLife</h2>
+  </div>
+    <div class="row">
+        <div class="col-md-6"><img class="w-100" src="images/income.jpg" alt=""></div>
+    <div class="col-md-6">
+      <div class="border border-light bg-light py-5">
+        <h4>Income</h4>
+        
+            <h6 class="d-inline">Income:</h6> <input type="text">
+    <br><br>
+        <h5>Expenses</h5>
+        <h6 class="d-inline">Food:</h6> <input type="text"><br><br>
+        <h6 class="d-inline">Rent:</h6> <input type="text"><br><br>
+        <h6 class="d-inline">Clothes:</h6> <input type="text">
+        <br><br><button class="px-5 py-2 text-white fw-bold btn btn-info">Calculate</button><br><br>
+        <h6 class="fw-bold">Total Expenses: <span>0</span></h6><br>
+        <h6 class="fw-bold">Balance: <span>0</span></h6>
+      </div>
+    </div>
+    </div>
+</section>
    <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="main/app.js"></script>
