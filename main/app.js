@@ -17,7 +17,7 @@ function apply(){
     
     const fourth= parseFloat(fourthInput.value);
     fourthInput.value = fourth;
-    
+  
 
 
 
