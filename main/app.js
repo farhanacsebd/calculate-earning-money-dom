@@ -3,6 +3,7 @@ const secondInput = document.getElementById('second');
 const thirdInput = document.getElementById('third');
 const fourthInput = document.getElementById('fourth');
 let balance = document.getElementById('balance');
+const calMsg = document.getElementById('cal-msg');
 const savingMsg = document.getElementById('saving-msg');
 
 function apply(){
@@ -23,9 +24,26 @@ function apply(){
 
 
     // expenses calculation
+   if(first>0 && second>0 && third>0 && fourth>0){
+    firstInput.value = first;
+    secondInput.value = second;
+    thirdInput.value = third;
+    fourthInput.value = fourth;
+
    const totalExpenses =  second + third + fourth;
    balance.innerText = first - totalExpenses;
    document.getElementById('total-Expenses').innerText = totalExpenses;
+
+   }
+   else if(first<=0){
+    console.log("dfsd");
+   }
+   else{
+    calMsg.innerHTML  = "You have to give the number.";
+    setTimeout(function(){
+        calMsg.innerHTML = ""
+    },7000)
+   }
    
 
 
@@ -46,16 +64,22 @@ function saveButton(){
     const remainingBalance = document.getElementById('remainingBalance');
    
    
-    if(saveValue>0){
-        
-    saveInpute.value = saveValue;
-   saveBalance.innerText = (balance.innerText * saveValue)/100; 
-   remainingBalance.innerText = balance.innerText - saveValue;
-
-    }
    
+  /*   if(balance.innerText >! saveBalance.innerTex && balance.innerText >! remainingBalance.innerText){
+        savingMsg.innerHTML  = "you can't do this.";
+        setTimeout(function(){
+            savingMsg.innerHTML = ""
+        },7000)
+    } */
     
+   if(saveValue>0){
+        
+       saveInpute.value = saveValue;
+       saveBalance.innerText = (balance.innerText * saveValue)/100; 
+       remainingBalance.innerText = balance.innerText - saveBalance.innerText;
     
+        }
+
     else{
         savingMsg.innerHTML  = "You have to give the number.";
         setTimeout(function(){
