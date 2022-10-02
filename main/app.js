@@ -3,6 +3,7 @@ const secondInput = document.getElementById('second');
 const thirdInput = document.getElementById('third');
 const fourthInput = document.getElementById('fourth');
 let balance = document.getElementById('balance');
+const savingMsg = document.getElementById('saving-msg');
 
 function apply(){
 
@@ -41,14 +42,30 @@ function apply(){
 function saveButton(){
     const saveInpute = document.getElementById("saveInpute");
     const saveValue = parseFloat(saveInpute.value);
+    const saveBalance = document.getElementById('saving-value');
+    const remainingBalance = document.getElementById('remainingBalance');
+   
+   
+    if(saveValue>0){
+        
     saveInpute.value = saveValue;
+   saveBalance.innerText = (balance.innerText * saveValue)/100; 
+   remainingBalance.innerText = balance.innerText - saveValue;
+
+    }
+   
+    
+    
+    else{
+        savingMsg.innerHTML  = "You have to give the number.";
+        setTimeout(function(){
+            savingMsg.innerHTML = ""
+        },7000)
+    }
     
 
-   const saveBalance = (balance.innerText * saveValue)/100; 
-   const remainingBalance = balance.innerText - saveValue;
+   
 
-   document.getElementById('saving-value').innerText = saveBalance;   
-   document.getElementById('remainingBalance').innerText = remainingBalance;
 
 
 
