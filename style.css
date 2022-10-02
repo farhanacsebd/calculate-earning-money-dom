@@ -3,3 +3,14 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+input{
+    border: none;
+    background-color: rgb(225, 224, 224);
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.bags{
+    height: 50px;
+}
