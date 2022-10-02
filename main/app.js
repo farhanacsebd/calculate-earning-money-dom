@@ -1,18 +1,20 @@
+const firstInput = document.getElementById('first');
+const secondInput = document.getElementById('second');
+const thirdInput = document.getElementById('third');
+const fourthInput = document.getElementById('fourth');
+
+
 function apply(){
 
-    const firstInput = document.getElementById('first');
     const first= parseFloat(firstInput.value);
     firstInput.value = first;
 
-    const secondInput = document.getElementById('second');
     const second= parseFloat(secondInput.value);
     secondInput.value = second;
 
-    const thirdInput = document.getElementById('third');
     const third= parseFloat(thirdInput.value);
     thirdInput.value = third;
-
-    const fourthInput = document.getElementById('fourth');
+    
     const fourth= parseFloat(fourthInput.value);
     fourthInput.value = fourth;
     
@@ -28,7 +30,7 @@ function apply(){
 
 
 
-// remove the input values
+  // clear input field
 
    firstInput.value ='';
    secondInput.value ='';
