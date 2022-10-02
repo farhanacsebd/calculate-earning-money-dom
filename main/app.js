@@ -2,7 +2,7 @@ const firstInput = document.getElementById('first');
 const secondInput = document.getElementById('second');
 const thirdInput = document.getElementById('third');
 const fourthInput = document.getElementById('fourth');
-
+let balance = document.getElementById('balance');
 
 function apply(){
 
@@ -23,9 +23,9 @@ function apply(){
 
     // expenses calculation
    const totalExpenses =  second + third + fourth;
-   const balance = first - totalExpenses;
+   balance.innerText = first - totalExpenses;
    document.getElementById('total-Expenses').innerText = totalExpenses;
-   document.getElementById('balance').innerText = balance;
+   
 
 
 
@@ -36,5 +36,24 @@ function apply(){
    secondInput.value ='';
    thirdInput.value ='';
    fourthInput.value ='';
+}
+
+function saveButton(){
+    const saveInpute = document.getElementById("saveInpute");
+    const saveValue = parseFloat(saveInpute.value);
+    saveInpute.value = saveValue;
+    
+
+   const saveBalance = (balance.innerText * saveValue)/100; 
+   const remainingBalance = balance.innerText - saveValue;
+
+   document.getElementById('saving-value').innerText = saveBalance;   
+   document.getElementById('remainingBalance').innerText = remainingBalance;
+
+
+
+// clear input field
+
+   saveInpute.value = "";
 }
 
