@@ -32,35 +32,35 @@ function apply(){
 
     // expenses calculation
   
-   if(first<=0){
-    incomeMsg.innerHTML  = "Enter a number in the Income field";
+   if(first<0){
+    incomeMsg.innerHTML  = "you can't enter any negative value";
     setTimeout(function(){
         incomeMsg.innerHTML = ""
     },7000)
    }
 
-   else if(second<=0){
-    foodMsg.innerHTML  = "Enter a number in the Food field";
+   else if(second<0){
+    foodMsg.innerHTML  = "you can't enter any negative value";
     setTimeout(function(){
         foodMsg.innerHTML = ""
     },7000)
    }
 
-   else if(third<=0){
-    rentMsg.innerHTML  = "Enter a number in the Rent field";
+   else if(third<0){
+    rentMsg.innerHTML  = "you can't enter any negative value";
     setTimeout(function(){
         rentMsg.innerHTML = ""
     },7000)
    }
 
-   else if(fourth<=0){
-    clothesMsg.innerHTML  = "Enter a number in the Clothe field";
+   else if(fourth<0){
+    clothesMsg.innerHTML  = "you can't enter any negative value";
     setTimeout(function(){
         clothesMsg.innerHTML = ""
     },7000)
    }
 
-   else if(first>0 && second>0 && third>0 && fourth>0){
+   else if(first>0 && second>=0 && third>=0 && fourth>=0){
 
    totalExpenses.innerText =  second + third + fourth;
    balance.innerText = first - totalExpenses.innerText;
@@ -107,11 +107,6 @@ function saveButton(){
         },7000)
     } */
     
-
-   
-
-
-
 
 // clear input field
 
