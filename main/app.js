@@ -9,12 +9,13 @@ const incomeMsg = document.getElementById('income-msg');
 const foodMsg = document.getElementById('food-msg');
 const rentMsg = document.getElementById('rent-msg');
 const clothesMsg = document.getElementById('clothes-msg');
+const balanceMsg = document.getElementById('balance-msg');
 const savingMsg = document.getElementById('saving-msg');
 
 
 
 function apply(){
-
+    debugger;
     const first= parseFloat(firstInput.value);
     firstInput.value = first;
 
@@ -64,6 +65,19 @@ function apply(){
 
    totalExpenses.innerText =  second + third + fourth;
    balance.innerText = first - totalExpenses.innerText;
+  
+  if(parseFloat(totalExpenses.innerText) > parseFloat(balance.innerText)){
+    totalExpenses.innerText = "";
+    balance.innerText ="";
+    balanceMsg.innerHTML  = "You can't spend much without balance";
+    setTimeout(function(){
+        balanceMsg.innerHTML = ""
+    },7000)
+  } 
+
+  else{
+   
+  }
 
    }
 
@@ -91,21 +105,19 @@ function saveButton(){
     const remainingBalance = document.getElementById('remainingBalance');
     
     
-        
-       saveInpute.value = saveValue;
-       const incomesTotal = parseFloat(totalExpenses.innerText) + parseFloat(balance.innerText);
-    //    console.log(incomesTotal);
-       saveBalance.innerText = (incomesTotal * saveValue)/100; 
-       remainingBalance.innerText = balance.innerText - saveBalance.innerText;
+    if(saveValue>0){
+        saveInpute.value = saveValue;
+        const incomesTotal = parseFloat(totalExpenses.innerText) + parseFloat(balance.innerText);
+        saveBalance.innerText = (incomesTotal * saveValue)/100; 
+        remainingBalance.innerText = balance.innerText - saveBalance.innerText;
+    }   
     
-        
-
-   /*  else{
+     else{
         savingMsg.innerHTML  = "You have to give the number.";
         setTimeout(function(){
             savingMsg.innerHTML = ""
         },7000)
-    } */
+    } 
     
 
 // clear input field
