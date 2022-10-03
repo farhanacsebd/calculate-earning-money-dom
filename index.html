@@ -18,15 +18,16 @@
        <div class="col-md-6">
         <div class="border border-light bg-light py-4">
         <h5 class="fw-bold">Income</h5>
-            <h6 class="d-inline">Income:</h6> <input id="first" type="text"><br><br>
+            <h6 class="d-inline">Income:</h6> <input id="first" type="text"><br><span class="text-danger fw-bold" id="income-msg"></span><br>
         <h5 class=" fw-bold">Expenses</h5>
-        <h6 class="d-inline">Food:</h6> <input id="second" type="text"><br><br>
-        <h6 class="d-inline">Rent:</h6>  <input id="third" type="text"><br><br>
-        <h6 class="d-inline">Clothes:</h6> <input id="fourth" type="text"><br><br>
+        <h6 class="d-inline">Food:</h6> <input id="second" type="text"><br><span class="text-danger fw-bold" id="food-msg"></span><br>
+        <h6 class="d-inline">Rent:</h6>  <input id="third" type="text"><br><span class="text-danger fw-bold" id="rent-msg"></span><br>
+        <h6 class="d-inline">Clothes:</h6> <input id="fourth" type="text"><br><span class="text-danger fw-bold" id="clothes-msg"></span><br>
         <button class="px-5 py-1 text-white fw-bold btn btn-info" onclick="apply()">Calculate</button><br><span class="text-danger fw-bold" id="cal-msg"></span><br>    
         <h6 class="fw-bold">Total Expenses: <span id="total-Expenses">0</span></h6><br>
         <h6 class="fw-bold">Balance: <span id="balance">0</span></h6> <br>
-        <h6 class="d-inline">Save:</h6> <input id="saveInpute" type="text"><span class="mx-3 fw-bold">%</span> <button class="btn btn-info px-4 text-white fw-bold" onclick="saveButton()">Save</button><br><span class="text-danger fw-bold" id="saving-msg"></span><br>
+        <h6 class="d-inline">Save:</h6> <input id="saveInpute" type="text"><span class="mx-3 fw-bold">%</span>
+         <button class="btn btn-info px-4 text-white fw-bold" onclick="saveButton()">Save</button><br><span class="text-danger fw-bold" id="saving-msg"></span><br>
         <h6 class="fw-bold">Saving Amount: <span id="saving-value">0</span></h6><br>
         <h6 class="fw-bold">Remaining Balance: <span id="remainingBalance">0</span></h6>
       </div>

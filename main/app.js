@@ -4,6 +4,10 @@ const thirdInput = document.getElementById('third');
 const fourthInput = document.getElementById('fourth');
 let balance = document.getElementById('balance');
 const calMsg = document.getElementById('cal-msg');
+const incomeMsg = document.getElementById('income-msg');
+const foodMsg = document.getElementById('food-msg');
+const rentMsg = document.getElementById('rent-msg');
+const clothesMsg = document.getElementById('clothes-msg');
 const savingMsg = document.getElementById('saving-msg');
 
 function apply(){
@@ -24,7 +28,36 @@ function apply(){
 
 
     // expenses calculation
-   if(first>0 && second>0 && third>0 && fourth>0){
+  
+   if(first<=0){
+    incomeMsg.innerHTML  = "Enter a number in the Income field";
+    setTimeout(function(){
+        incomeMsg.innerHTML = ""
+    },7000)
+   }
+
+   else if(second<=0){
+    foodMsg.innerHTML  = "Enter a number in the Food field";
+    setTimeout(function(){
+        foodMsg.innerHTML = ""
+    },7000)
+   }
+
+   else if(third<=0){
+    rentMsg.innerHTML  = "Enter a number in the Rent field";
+    setTimeout(function(){
+        rentMsg.innerHTML = ""
+    },7000)
+   }
+
+   else if(fourth<=0){
+    clothesMsg.innerHTML  = "Enter a number in the Clothe field";
+    setTimeout(function(){
+        clothesMsg.innerHTML = ""
+    },7000)
+   }
+
+   else if(first>0 && second>0 && third>0 && fourth>0){
     firstInput.value = first;
     secondInput.value = second;
     thirdInput.value = third;
@@ -35,11 +68,9 @@ function apply(){
    document.getElementById('total-Expenses').innerText = totalExpenses;
 
    }
-   else if(first<=0){
-    console.log("dfsd");
-   }
+
    else{
-    calMsg.innerHTML  = "You have to give the number.";
+    calMsg.innerHTML  = "You have to enter the number in the input field";
     setTimeout(function(){
         calMsg.innerHTML = ""
     },7000)
