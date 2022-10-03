@@ -2,13 +2,16 @@ const firstInput = document.getElementById('first');
 const secondInput = document.getElementById('second');
 const thirdInput = document.getElementById('third');
 const fourthInput = document.getElementById('fourth');
-let balance = document.getElementById('balance');
+const balance = document.getElementById('balance');
+const totalExpenses = document.getElementById('total-Expenses');
 const calMsg = document.getElementById('cal-msg');
 const incomeMsg = document.getElementById('income-msg');
 const foodMsg = document.getElementById('food-msg');
 const rentMsg = document.getElementById('rent-msg');
 const clothesMsg = document.getElementById('clothes-msg');
 const savingMsg = document.getElementById('saving-msg');
+
+
 
 function apply(){
 
@@ -58,14 +61,9 @@ function apply(){
    }
 
    else if(first>0 && second>0 && third>0 && fourth>0){
-    firstInput.value = first;
-    secondInput.value = second;
-    thirdInput.value = third;
-    fourthInput.value = fourth;
 
-   const totalExpenses =  second + third + fourth;
-   balance.innerText = first - totalExpenses;
-   document.getElementById('total-Expenses').innerText = totalExpenses;
+   totalExpenses.innerText =  second + third + fourth;
+   balance.innerText = first - totalExpenses.innerText;
 
    }
 
@@ -77,46 +75,37 @@ function apply(){
    }
    
 
-
-
-
   // clear input field
 
-   firstInput.value ='';
+  firstInput.value ='';
    secondInput.value ='';
    thirdInput.value ='';
    fourthInput.value ='';
 }
 
 function saveButton(){
+   
     const saveInpute = document.getElementById("saveInpute");
     const saveValue = parseFloat(saveInpute.value);
     const saveBalance = document.getElementById('saving-value');
     const remainingBalance = document.getElementById('remainingBalance');
-   
-   
-   
-  /*   if(balance.innerText >! saveBalance.innerTex && balance.innerText >! remainingBalance.innerText){
-        savingMsg.innerHTML  = "you can't do this.";
-        setTimeout(function(){
-            savingMsg.innerHTML = ""
-        },7000)
-    } */
     
-   if(saveValue>0){
+    
         
        saveInpute.value = saveValue;
-       saveBalance.innerText = (balance.innerText * saveValue)/100; 
+       const incomesTotal = parseFloat(totalExpenses.innerText) + parseFloat(balance.innerText);
+    //    console.log(incomesTotal);
+       saveBalance.innerText = (incomesTotal * saveValue)/100; 
        remainingBalance.innerText = balance.innerText - saveBalance.innerText;
     
-        }
+        
 
-    else{
+   /*  else{
         savingMsg.innerHTML  = "You have to give the number.";
         setTimeout(function(){
             savingMsg.innerHTML = ""
         },7000)
-    }
+    } */
     
 
    
